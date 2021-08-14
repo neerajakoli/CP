@@ -6,4 +6,10 @@
 
 
 def fun_isfactor(f, n):
-	return False # replace with your solution
+	if(n==0 and f!=0):
+		return True # replace with your solution
+	if(n==0 and f==0):
+		return True 
+	if(n!=0 and f==0):
+		return False 
+	return abs(n)%abs(f)==0
