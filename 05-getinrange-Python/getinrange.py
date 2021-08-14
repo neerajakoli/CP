@@ -15,4 +15,3 @@ def fun_getinrange(x, bound1, bound2):
 			return bound1
 		else:
 			return bound2
-print(fun_getinrange(1, 3, 5))
