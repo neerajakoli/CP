@@ -22,7 +22,17 @@
 #   [ 0, 1, 3] ]
 
 def removeRowAndCol(L, row, col):
-    # Your code goes here...
-    pass
+    # for k in range(len(list[0])):
+    #     list[row].pop(k)
+    list.pop(row)
+    for i in range(len(list)):
+        list[i].pop(col)
+    return list
+list=[['a','b','c','u','y','o'],['q','w','e','r','t']]
+print(removeRowAndCol(list,0,1))
 
 # Write your own test cases.
+# list=[[1,2,3],[6,7,8],[2,3,4]], row=0 col=2 , output=[[6, 7], [2, 3]]
+# list=[[10,24,33,67],[65,77,88,00],[22,43,34,67]], row=2 col=2,  output= [[10, 24, 67], [65, 77, 0]] 
+# list=[['a','b','c','u','y','o'],['q','w','e','r','t']] row=0 col=1, output=[['q', 'e', 'r', 't']]
+
