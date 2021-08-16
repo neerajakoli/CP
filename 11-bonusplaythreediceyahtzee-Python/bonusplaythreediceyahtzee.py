@@ -40,5 +40,26 @@
 
 
 def bonusplaythreediceyahtzee(dice):
-	# Your code goes here
-	pass
+	a=str(dice)[::-1] 
+	if(a[0]==a[1]==a[2]):
+		return (int(a[0]+a[1]+a[2]),20+int(a[0])*3)
+	d=max(a[0],a[1],a[2])
+	if(d==a[3] or d==a[4]):
+		e=d
+	else:
+		e=max(a[3],a[4]) 
+	if(a[5]==d or a[6]==d):
+		f=d 
+	elif(a[5]==e or a[6]==e):
+		f=d 
+	else:
+		f=max(a[5],a[6]) 
+	print(d,e,f)
+	if(d==e or d==f or e==f):	
+		if(d==e):
+			return (int(d+e+f),int(d)+int(e)+10) 
+		elif(f==e):
+			return (int(d+e+f),int(f)+int(e)+10)
+		return (int(d+e+f),int(d)*2+10)
+	return (int(d+e+f),int(max(d,e,f)))
+print(bonusplaythreediceyahtzee(2633413))
