@@ -34,5 +34,22 @@
 # Hint: Also, remember to use % to get the one's digit, and use //= to get rid of the one's digit.
 
 def playstep2(hand, dice):
-	# your code goes here
-	pass
+	a=str(hand)
+	if(a[0]==a[1] or a[1]==a[2] or a[0]==a[2]):
+		if(a[0]==a[1]):
+			if(str(dice%10)>a[0]):
+				return (int(str(dice%10)+a[0]+a[1]),dice//10)
+			return (int(a[0]+a[1]+str(dice%10)),dice//10)
+		elif(a[0]==a[2]):
+			if(str(dice%10)>a[0]):
+				return (int(str(dice%10)+a[0]+a[0]),dice//10)
+			return (int(a[0]+a[0]+str(dice%10)),dice//10)
+		else:
+			if(str(dice%10)>a[1]):
+				return (int(str(dice%10)+a[1]+a[1]),dice//10)
+			return (int(a[1]+a[1]+str(dice%10)),dice//10)
+	b=max(a[0],a[1],a[2]) 
+	c=str(dice%10)
+	e=str((dice//10)%10)
+	f=str(int(b)+int(c)+int(e)-int(max(b,c,e))-int(min(b,c,e)))
+	return (int(max(b,c,e)+f+min(b,c,e)), dice//100) 
