@@ -5,7 +5,7 @@
 
 
 def fun_matrixmultiply(m1, m2):
-    if (isirregularlist(m1) or isirregularlist(m2)):
+    if (len(m1[0])!=len(m2)):
         return None
     result=[]
     for i in range(len(m1)): 
@@ -15,17 +15,8 @@ def fun_matrixmultiply(m1, m2):
             for k in range(len(m2)): 
                 r += (m1[i][k] * m2[k][j])
             p.append(r)
-        result.append(p)
+        result.append(p) 
     return result
-
-def isirregularlist(a):
-    max=len(a[0])
-    for i in a:
-        if(max!=len(i)):
-            return True
-    return False
-
-
 
 
 
