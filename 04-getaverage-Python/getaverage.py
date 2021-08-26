@@ -10,5 +10,13 @@
 
 
 def fun_getaverage(s): 
-	return 0.0
-
+	p=s.split(",")
+	r=0
+	count=0
+	for i in range(len(p)):
+		if(p[i].isdigit()):
+			r+=int(p[i])
+			count+=1
+	if(count!=0):
+		return r/count
+	return r
