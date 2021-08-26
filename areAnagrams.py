@@ -11,7 +11,18 @@
 # Hint: The time complexity can be achieved in Linear.
 
 def areAnagrams(s1, s2):
-    # Your code goes here...
-    pass
-
-# write your test cases here...
+    s1=s1.lower()
+    s2=s2.lower()
+    if(len(s1)!=len(s2)):
+        return False
+    for i in range(len(s1)):
+        if(s1.count(s1[i])!=s2.count(s1[i])):
+            return False 
+    return True 
+assert(areAnagrams("Aba","BAA")==True)
+assert(areAnagrams("asder","asde")==False)
+assert(areAnagrams("sedered","desered")==True)
+assert(areAnagrams("fdrt","fdrts")==False)
+assert(areAnagrams("qwertwetr","ttwweerrq")==True)
+assert(areAnagrams("AAAAA","AaaaA")==True)
+print("All TestCases got passed")
