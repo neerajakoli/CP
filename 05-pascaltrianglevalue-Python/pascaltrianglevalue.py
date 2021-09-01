@@ -11,15 +11,17 @@
 def fun_pascaltrianglevalue(row, col):
 	if(col>row):
 		return 0 
-	rows = [[1], [1, 1]]
-	if(row>2):
-		for i in range(2,row):
-			r = [1]
-			for j in range(1,i):
-				r.append(rows[-1][j] + rows[-1][j - 1])
-			r.append(1)
-		rows.append(r)
-	print(rows)
-	return rows[row][col]
+	a = []
+	for i in range(row+1):
+		a.append(0)
+	a[0] = 1
+	a[-1] = 1
+	for i in range(1,len(a)-1):
+		a[i] = a[i-1]*(row-i+1)//i
 
+	print(a)
+	if(len(a)<col):
+		return 0
+	else:
+		return a[col]
 print(fun_pascaltrianglevalue(5,2))  
