@@ -7,4 +7,19 @@
 
 
 def fixmostlymagicsquare(L):
-	# Your code goes here
+	p=[]
+	for i in range(len(L)):
+		p.extend(L[i])
+	d=sorted(p)
+	t=0
+	for j in range(1,len(L)**2+1):
+		if j in d:
+			d.remove(j)
+		else:
+			t=j
+	for i in range(len(L)):
+		for j in range(len(L[0])):
+			if(L[i][j]==d[0]):
+				L[i][j]=t
+	return L 
+
